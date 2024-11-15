@@ -1,0 +1,90 @@
+
+/* Tablet View */
+
+@media (orientation:portrait), (width <= 768px){
+
+    .home > .container{
+        padding-top: 2.8rem;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        width: 200px;
+        padding: .3rem;
+        overflow: hidden;
+        pointer-events: none;
+        transform: translateX(3rem);
+        opacity: 0;
+        border-radius: .3rem;
+        transition: var(--transition);
+        gap: .2rem;
+        box-shadow: var(--default-box-shadow);
+    }
+    
+    nav a{
+        background: rgba(0, 0, 0, 0.3); 
+    }
+    
+    .show_menu{
+        transform: translateX(0);
+        overflow: auto;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .menu_btn{
+        display: flex;
+    }
+
+    .content{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+   .content_text{
+        margin-top: -4rem;
+    }
+
+   .content_img img{
+        max-width: 245px;
+    }
+   
+   .btn_box{
+       padding: .5rem 0;
+       margin-top: 2rem;
+    }
+
+}
+
+/* Mobile View */
+
+@media (width <= 426px){
+    
+    header .container{
+        padding: 0.2rem .6rem;
+    }
+    
+    .container{
+        padding: 0 .7rem;
+    }
+    
+    .content_text{
+        flex-grow: 1;
+        margin-top: -1rem;
+    }
+
+    .content_img{
+        justify-content: center;
+    }
+    
+    .btn_box{
+        margin: auto 0;
+    }
+
+}

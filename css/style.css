@@ -1,0 +1,297 @@
+/* Poppins */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* Ga Maamli */
+
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* Acme */
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Ga+Maamli&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Acme", sans-serif;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+:root{
+    --main-color: hsl(230, 82%, 9%);
+    --secondary-color: hsl(245, 100%, 55%);
+    --gradient: linear-gradient(135deg, hsl(0, 0%, 20%), hsl(240, 60%, 11%));
+    --default-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+    --transition: .1s ease-in-out;
+    --img-size: calc(((100vw + 100vh) / 2) * .4);
+    --text-gradient: linear-gradient(hsl(0, 0%, 100%), hsl(245, 100%, 55%));
+    --heading-gradient: linear-gradient(hsl(0, 100%, 65%), hsl(0, 100%, 55%));
+}
+
+body{
+    background: var(--main-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    font-family: "Poopins", sans-serif;
+}
+
+.msg_bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.show_msg{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.msg_box{
+    background: hsla(0, 0%, 50%, 0.5);
+    border-radius: .4rem;
+    overflow: hidden;
+    width: 400px;
+    box-shadow: var(--default-box-shadow);
+    backdrop-filter: blur(20px);
+    margin: 0 1rem;
+}
+
+.msg_heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--heading-gradient);
+    padding: 0 .2rem;
+    position: relative;
+    z-index: -1;
+}
+
+.msg_heading h3{
+    font-weight: lighter;
+}
+
+.x_btn{
+    position: absolute;
+    top: .15rem;
+    right: .15rem;
+}
+
+.cover{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .35rem;
+    border: 2px solid transparent;
+}
+
+.cover i{
+    font-size: 1.2rem;
+    padding: 0 .05rem 0 .1rem;
+}
+
+.message{
+    padding: 1rem 1rem;
+}
+
+.message p{
+    text-align: center;
+    text-wrap: pretty;
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--gradient);
+    box-shadow: var(--default-box-shadow);
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 1rem;
+    position: relative;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Ga Maamli", "Acme", sans-serif;
+    font-size: 1.6rem;
+    background: var(--text-gradient);
+    background-clip: text;
+    color: transparent;
+    line-height: normal;
+}
+
+nav{
+    padding: .3rem;
+}
+
+nav a{
+    padding: .05rem 1rem;
+    border-radius: .3rem;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.menu_btn{
+    position: relative;
+    cursor: pointer;
+    border: 2px solid transparent;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 3px;
+    border-radius: .3rem;
+}
+
+.bar-1, .bar-2, .bar-3{
+    width: 23px;
+    height: 3px;
+    background-color: white;
+    transform-origin: center;
+    transition: translate 100ms ease-in 100ms,
+                rotate 100ms ease-in,
+                width 0ms 100ms;
+}
+
+.clicked .bar-1{
+    translate: 0px 8px;
+    rotate: -45deg;
+    border-radius: 1rem;
+    transition: translate 100ms ease-in,
+                rotate 100ms ease-in 100ms;
+}
+
+.clicked .bar-2{
+    width: 0;
+}
+
+.clicked .bar-3{
+    translate: 0px -8px;
+    rotate: 45deg;
+    border-radius: 1rem;
+    transition: translate 100ms ease-in,
+                rotate 100ms ease-in 100ms;
+}
+
+.home{
+    min-height: 100svh;
+    background: var(--gradient);
+}
+
+.home > .container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    padding-top: 3rem;
+}
+
+.content{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.content_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content_img{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.content_img img{
+    width: clamp(300px, 100%, 450px);
+    transition: var(--transition);
+}
+
+.content_text h2{
+    color: var(--secondary-color);
+}
+
+.content_text p{
+    text-align: justify;
+}
+
+.btn_box{
+    margin-top: 5rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    z-index: 3;
+}
+
+.btn_box button{
+    position: relative;
+    background: var(--gradient);
+    font-size: 1.2rem;
+    padding: .3rem 1rem;
+    border-radius: .3rem;
+    border: 2px solid var(--main-color);
+    box-shadow: var(--default-box-shadow);
+    transition: var(--transition);
+}
+
+.media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+    padding: 1rem 0;
+    z-index: 3;
+}
+
+.media a{
+    position: relative;
+    border: 2px solid var(--main-color);
+    font-size: 1.2rem;
+    background: var(--gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem .4rem;
+    border-radius: .3rem;
+    box-shadow: var(--default-box-shadow);
+}
